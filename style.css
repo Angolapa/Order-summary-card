@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --paleBlue: hsl(225, 100%, 94%);
+    --brightBlue: hsl(245, 75%, 52%);
+    --veryPaleBlue: hsl(225, 100%, 98%);
+    --desaturatedBlue: hsl(224, 23%, 55%);
+    --darkBlue: hsl(223, 47%, 23%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*Estilo de letra*/
+    font-family: "Red Hat Display", sans-serif;
+    /*Color de fondo de la pagina*/
+    background-color: var(--paleBlue);
+    /*Mobile first*/
+    /*Patron de fondo de pantalla*/
+    background-image:url(./images/pattern-background-mobile.svg);
+    /*Para que no se repita el patron*/
+    background-repeat: no-repeat;
+    /*Tamaño del patron*/
+    background-size: cover;
+}
+
+.main-container{
+    /*Ocultar los bordes de la imagen que sobre sale del .image*/
+    /*Hace que todo el contenido que sobre salga se esconda*/
+    overflow: hidden;
+    width: 328px; /*Ancho*/
+    height: 570px;/*Altura*/
+    margin: 70px auto; /*Margenes Superior, de los lados*/
+    border-radius: 8px; /*Redondeo de las puntas*/
+    background-color: white; /*Color de fondo del contenedor */
+}
+.image{
+    /*Seleccionar imagen para poner de fondo*/
+    background-image: url(./images/illustration-hero.svg);
+    height: 162px;/*Altura*/
+    background-size: cover; /*Ajutar tamaño*/
+}
+h1{
+    font-weight: 900; /*Tamaño del titulo*/
+    text-align: center;/*Centrar texto*/
+    font-size: 1.4em; /*Tamaño de la letra*/
+    margin: 24px 0; /*Margenes tanto inferior como superior  a los lados no se coloco por eso 0*/
+    color: var(--darkBlue); /*Color del texto*/
+}
+.main-paragraph{
+    text-align: center;/*Centrar perrafo*/
+    color: var(--desaturatedBlue); /*Color del parrafo*/
+    margin-bottom: 32px; /*Margen inferior para separarlo del siguiente div*/
+    padding: 0 30px;/*Margenes inferior y superior  0 pero de los lados 30px*/
+}
+.plan-container{
+    /*border: 1px solid red;  nos podemos ayudar para visualizar mejor donde estamos trabajando*/
+    width: 280px;/*Ancho*/
+    height: 82px;/*Altura*/
+    display: flex;/**/
+    justify-content: space-around; /*Para agregar espacio entre los flex*/
+   align-items: center;/*Aliniear los items en el centro*/
+   margin: 0 auto 32px; /*alinear el contenedor  margenes superior no hay margen y de los lados es automatico margen inferior 32px*/
+   border-radius: 8px; /*Redondear esquinas*/
+   background-color: var(--veryPaleBlue);/*Color del contenedor*/
+
+}
+
+.icon-container{
+    background-image: url(./images/icon-music.svg);/*La imagen no se muestra si no colocamos el ancho y la altura*/
+    background-repeat: no-repeat;/*Para que la imagen no se repita*/
+    width: 50px;/*Ancho*/
+    height: 50px;/*Altura*/
+}
+/*Para no modificar los dos parrafos dentro del payment podemos utilizar nth-child() aca inidicamos sobre cual queremos trabajar*/
+.payment p:nth-child(1){
+    color: var(--darkBlue);
+    font-weight: 900;
+    font-size: 0.9em;
+}
+/*Trabajando con el segundo parrafo*/
+.payment p:nth-child(2){
+    color: var(--desaturatedBlue);
+
+}
+.change{
+    color: var(--brightBlue);
+    font-size: 0.8em; /*Tamaño de la fuente*/
+    font-weight: 700;
+    margin-left: 30px; /*Margen izquierdo*/
+}
+
+/*Cambiar el cursor cuando pasamos sobre el*/
+.change:hover{
+    text-decoration: none; /*Eliminar el subrayado al pasar el raton*/
+    color: var(--desaturatedBlue);/*Cambiar el color al pasar el cursor*/
+}
+button{
+    background-color: var(--brightBlue);/*Color del fondo del button*/
+    border: none; /*Quitar loos hordes*/
+    width: 280px; /*Ancho*/
+    height: 53px; /*Altura*/
+    color: var(--veryPaleBlue); /*Color de la letra*/
+    border-radius: 8px; /*Bordes redondeados*/
+    /*Los button son elementos de linea*/
+    display: block; /*Transformar de linea a bloque*/
+    margin: 0 auto; /*Centrar el boton superior 0 auto de los laterales*/
+    font-weight:900; /*Anchura del texto*/
+    font-size: 0.9em; /*Tamaño de la letra*/
+    margin-bottom: 18px; /*Separacion de la parte de abajo*/
+    box-shadow: 1px 10px 8px 3px var(--paleBlue);
+}
+/*Cursor sobre el button*/
+button:hover{
+    background-color: var(--desaturatedBlue); /*Cambiar color del fondo al pasar el cursor sobre el button*/
+    cursor: pointer; /*Cambia el estilo del cursor a una manito*/
+}
+.cancel-container{
+    text-align: center;/*Centrar texto*/
+}
+.cancel{
+    text-decoration: none; /*Quitar estilos (subrayado)*/
+    color: var(--desaturatedBlue);/*Color de la fuente*/
+    font-size: 0.9em;/*tamaño de la fuente*/
+    font-weight: 900; /*ancho de la fuente*/
+}
+/*Cuando pasemos el cursor por el Cancelar*/
+.cancel:hover{
+    color: var(--darkBlue);
+
+}
+/*Footer*/
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media (min-width:944px){
+    body{
+        background-image: url(./images/pattern-background-desktop.svg);/*Cambiar imagen cuando supere los 944px se muestre este tamaño de imagen*/
+        background-size: contain; /*para que la onda pase al lado superior*/
+    }
+    .main-container{
+        width: 408px; /*Ancho del contenedor*/
+        height: 632px; /*Altura*/
+        margin-bottom: 50px;/*Espacio de la parte inferior */
+    }
+
+    h1{
+        margin: 48px 0 24px;/*Superior 48 0 a los lados y 24 de la parte inferior */
+    }
+
+    .main-paragraph{
+        margin-bottom: 20px; /*Espacio inferior*/
+    }
+    .plan-container{
+        width: 316px;/*Ancho*/
+        height: 91px;/*Altura*/
+        padding: 0 10px;/* inferior 0 de costado 10px*/
+        margin-bottom: 28px; /*Margen inferior */
+    }
+
+    .change{
+        margin-left: 60px; /*Margen izquierdo*/
+    }
+    button{
+        width: 316px;/*Ancho*/
+        margin-bottom: 32px /*Margen inferior */;
+    }
+
+}
